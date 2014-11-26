@@ -6,8 +6,19 @@ package com.analise.singleton;
  */
 public class Singleton {
     private static Singleton instance = null;
+    private long date;
     
-    private static Singleton getInstance(){
+    private Singleton() 
+    {
+        date = System.currentTimeMillis();
+    }
+
+    public Long getData() {
+
+        return date;
+    }
+    
+    public static Singleton getInstance(){
         if(instance==null){
             return new Singleton();
     } else{

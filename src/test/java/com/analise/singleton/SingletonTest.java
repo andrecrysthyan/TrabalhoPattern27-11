@@ -1,41 +1,45 @@
 package com.analise.singleton;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import static org.junit.Assert.*;
-
+import static junit.framework.Assert.assertEquals;
+import junit.framework.TestCase;
 /**
  *
  * @author Marco
  */
-public class SingletonTest {
+public class SingletonTest extends TestCase {
     
-    public SingletonTest() {
+    private Singleton instancia, segundaInstancia;
+    
+    public void getDataPrimeiraTemQueSerIgualSegunda(){
+        
+        instancia = Singleton.getInstance();
+        Long date = instancia.getData();
+        segundaInstancia = Singleton.getInstance();
+        Long dateSecondTime = segundaInstancia.getData();
+        
+        assertEquals(date, dateSecondTime);
     }
     
-    @BeforeClass
-    public static void setUpClass() {
+    public SingletonTest(String testName) {
+        super(testName);
     }
     
-    @AfterClass
-    public static void tearDownClass() {
+    @Override
+    protected void setUp() throws Exception {
+        super.setUp();
     }
     
-    @Before
-    public void setUp() {
+    @Override
+    protected void tearDown() throws Exception {
+        super.tearDown();
+    }
+
+    public void testGetInstance() {
+        
+        instancia = Singleton.getInstance();
+        segundaInstancia = Singleton.getInstance();
+        assertEquals(instancia, segundaInstancia);
     }
     
-    @After
-    public void tearDown() {
-    }
-    
-    @org.junit.Test
-    public void testSomeMethod() {
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
     
 }
