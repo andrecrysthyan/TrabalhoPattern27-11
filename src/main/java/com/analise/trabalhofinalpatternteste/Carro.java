@@ -12,10 +12,20 @@ public abstract class Carro {
         motor();
         rodas();
         pintura();
-        posMontar();
+      
     }
     
     public abstract void tipo();
+    
+    public void montar  (){
+        posMontar.montar();
+    }
+    
+     public void salvarCarro () {
+         montarCarro();
+         montar ();
+        
+    }
     
     public void lataria(){
         System.out.println("Mexendo na lataria...");

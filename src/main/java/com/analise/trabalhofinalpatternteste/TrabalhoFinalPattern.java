@@ -10,7 +10,12 @@ public class TrabalhoFinalPattern {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+       
+CarroBuilder builder = new CarroBuilder();
+        Carro c = builder.criaCarroSedan();
+        c.salvarCarro();
+        Carro d = builder.criaCarroHatch();
+        d.salvarCarro();
     }
     
 }
